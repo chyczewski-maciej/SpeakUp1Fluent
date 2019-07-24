@@ -27,3 +27,8 @@ There are some well known libraries that expose Fluent APIs:
 - Fluent Validation
 - Polly
 - Probably many more...
+
+### Libraries used in the code samples:
+
+- Bddfy - <https://github.com/TestStack/TestStack.BDDfy>
+- FluentAssertions - <https://fluentassertions.com/>

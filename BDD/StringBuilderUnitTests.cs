@@ -14,7 +14,8 @@ namespace BDD
             Given(new StringBuilder())
                 .When(Abc_appended)
                 .AndWhen(_123_appended)
-                .Then(StringBuilder_ToString_returns_Abc123);
+                .Then(StringBuilder_ToString_returns_Abc123)
+                .AndThen(StringBuilder_ToString_returns_Abc123_again);
 
             void Abc_appended(StringBuilder stringBuilder) => stringBuilder.Append("Abc");
 
@@ -22,6 +23,8 @@ namespace BDD
             void _123_appended(StringBuilder stringBuilder) => stringBuilder.Append("123");
 
             void StringBuilder_ToString_returns_Abc123(StringBuilder stringBuilder)
+                => stringBuilder.ToString().Should().Be("Abc123");
+            void StringBuilder_ToString_returns_Abc123_again(StringBuilder stringBuilder)
                 => stringBuilder.ToString().Should().Be("Abc123");
         }
     }

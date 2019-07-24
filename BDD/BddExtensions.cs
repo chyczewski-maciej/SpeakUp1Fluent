@@ -10,10 +10,10 @@ namespace BDD
             return value;
         }
 
-
         public static T Given<T>(T value) => value;
         public static T When<T>(this T t, Action<T> a) => t.Do(a);
         public static T AndWhen<T>(this T t, Action<T> a) => t.Do(a);
         public static T Then<T>(this T t, Action<T> a) => t.Do(a);
+        public static T AndThen<T>(this T t, Action<T> a) => t.Do(a);
     }
 }
