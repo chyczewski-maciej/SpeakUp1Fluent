@@ -1,8 +1,7 @@
-using System;
 using CarConfigurator;
 using FluentAssertions;
 using Xunit;
-using static BddExtensions.Core;
+using static CarConfiguratorUnitTests.BddExtensions;
 
 namespace CarConfiguratorUnitTests
 {
@@ -12,7 +11,7 @@ namespace CarConfiguratorUnitTests
         public void Car_configuration_remains_unchanged_when_exterior_color_is_changed()
         {
             Given(A_car_configuration)
-                .That(Exterior_color_is_alpine_white)
+                .That(Has_alpine_white_exterior_color) // Assertion about the give
                 .When(A_new_configuration_with_black_sapphire_metallic_color_is_created)
                 .Then(Old_configuration_exterior_color_remains_alpine_white)
                 .And(New_configuration_exterior_color_is_black_sapphire_metallic);
@@ -33,7 +32,7 @@ namespace CarConfiguratorUnitTests
                 InteriorTrims.Aluminium_hexagon_with_black_high_gloss_finish,
                 OptionalEquipment.Automatic_air_conditioning);
 
-        private void Exterior_color_is_alpine_white(CarConfiguration configuration)
+        private void Has_alpine_white_exterior_color(CarConfiguration configuration)
         {
             configuration.ExteriorColor.Should().Be(ExteriorColor.Alpine_white);
         }
