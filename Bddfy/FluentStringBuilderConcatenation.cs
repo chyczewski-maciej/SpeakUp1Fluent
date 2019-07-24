@@ -16,7 +16,7 @@ namespace Bddfy
         [BddfyFact]
         public void StringBuilderJoinsTwoStrings()
         {
-            this.Given(s => s.A_new_StringBuilder())
+            this.Given(fluentStringBuilderConcatenation => fluentStringBuilderConcatenation.A_new_StringBuilder())
                 .When(_ => Abc_is_appended())
                 .And(_ => _123_is_appended(), "And 123 is appended")
                 .Then(_ => ToString_Equals_abc123())
